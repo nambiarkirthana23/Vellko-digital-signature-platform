@@ -1,3 +1,14 @@
+:root {
+  --color-primary: #e61c47;
+  --color-primary-dark: #c4123a;
+  --color-primary-light: #fdeaee;
+  --color-text: #222;
+  --color-text-muted: #6b6f76;
+  --color-border: #e2e5eb;
+  --radius-lg: 16px;
+  --radius-md: 15px;
+}
+
 .sign-container {
   min-height: 100vh;
   background: #f5f7fb;
@@ -8,52 +19,79 @@
 }
 
 .sign-card {
-  background: white;
+  background: #fff;
   width: 100%;
   max-width: 700px;
   padding: 40px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.sign-card h1 {
+.sign-title {
   font-size: 2.5rem;
-  color: #e61c47;;
+  color: var(--color-primary);
   margin-bottom: 10px;
 }
 
-.subtitle {
-  color: #666;
+.sign-subtitle {
+  color: var(--color-text-muted);
   margin-bottom: 30px;
 }
 
 .upload-box {
-  border: 2px dashed #e61c47;
-  border-radius: 15px;
+  display: block;
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-md);
   padding: 50px 20px;
   cursor: pointer;
   margin-bottom: 30px;
+  background: var(--color-primary-light);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.upload-box:hover,
+.upload-box:focus-within {
+  background: #fbd9e0;
+  border-color: var(--color-primary-dark);
+}
+
+.upload-box.is-dragging {
+  background: #fbd9e0;
+  border-color: var(--color-primary-dark);
+  transform: scale(1.01);
 }
 
 .upload-icon {
   font-size: 60px;
-  color: #e61c47;
   margin-bottom: 15px;
 }
 
 .upload-box h3 {
-  color: #333;
-  margin-bottom: 10px;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
-.upload-box p {
-  color: #777;
-  margin-bottom: 15px;
+.upload-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
-.upload-box input {
-  margin-top: 10px;
+.upload-hint {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.upload-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
 }
 
 .features {
@@ -66,10 +104,14 @@
 .feature {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #e61c47;
+  gap: 8px;
+  color: var(--color-primary);
   font-weight: 600;
   font-size: 16px;
+}
+
+.feature-icon {
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
@@ -77,8 +119,12 @@
     padding: 25px;
   }
 
-  .sign-card h1 {
+  .sign-title {
     font-size: 2rem;
+  }
+
+  .upload-box {
+    padding: 35px 15px;
   }
 
   .features {
@@ -86,16 +132,49 @@
     gap: 15px;
   }
 }
+
+@media (max-width: 480px) {
+  .sign-title {
+    font-size: 1.6rem;
+  }
+
+  .sign-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .upload-icon {
+    font-size: 46px;
+  }
+}
+
 .pdf-preview {
   margin-top: 30px;
 }
 
 .pdf-preview h2 {
   margin-bottom: 15px;
-  color: #222;
+  color: var(--color-text);
 }
 
 .pdf-preview iframe {
-  border: 1px solid #ddd;
+  width: 100%;
+  border: 1px solid var(--color-border);
   border-radius: 10px;
+}
+
+.signature-overlay {
+  position: absolute;
+  border: 2px dashed #ff4fa3;
+  background: rgba(255, 79, 163, 0.05);
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+  z-index: 10;
+}
+
+.signature-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
