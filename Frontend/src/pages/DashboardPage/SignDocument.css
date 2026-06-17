@@ -1,0 +1,101 @@
+.sign-container {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.sign-card {
+  background: white;
+  width: 100%;
+  max-width: 700px;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sign-card h1 {
+  font-size: 2.5rem;
+  color: #e61c47;;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.upload-box {
+  border: 2px dashed #e61c47;
+  border-radius: 15px;
+  padding: 50px 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.upload-icon {
+  font-size: 60px;
+  color: #e61c47;
+  margin-bottom: 15px;
+}
+
+.upload-box h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.upload-box p {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.upload-box input {
+  margin-top: 10px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e61c47;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .sign-card {
+    padding: 25px;
+  }
+
+  .sign-card h1 {
+    font-size: 2rem;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.pdf-preview {
+  margin-top: 30px;
+}
+
+.pdf-preview h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.pdf-preview iframe {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
