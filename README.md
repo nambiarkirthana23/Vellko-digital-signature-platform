@@ -166,16 +166,16 @@ Signature drag-and-drop positioning requires further refinement.
 After uploading pdf,pdf preview page title and context needs to be changed.
 
 Future Improvements
-Password Reset & Recovery Flow
-Complete Public Verification Portal
-QR Code Based Verification
-Audit Logging System
-Admin Dashboard
-Cloud Storage Integration
-Email Notifications
-Reusable Saved Signatures
-Multi-user Signing Workflow
-Enhanced Signature Placement Experience
+Password Reset & Recovery Flow,
+Complete Public Verification Portal,
+QR Code Based Verification,
+Audit Logging System,
+Admin Dashboard,
+Cloud Storage Integration,
+Email Notifications,
+Reusable Saved Signatures,
+Multi-user Signing Workflow,
+Enhanced Signature Placement Experience.
 
 
 
