@@ -646,6 +646,24 @@ const handleDragMove = (e) => {
     }
   };
 
+  
+const handleUploadSigned = async (signedBlob) => {
+  const formData = new FormData();
+
+  formData.append("file", signedBlob, "signed.pdf");
+  formData.append("documentId", selectedDocId); // store doc id
+
+  await axios.post("http://localhost:5000/documents/upload-signed", formData, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+
+
+
   return (
     <div className="pdf-preview-container">
       <div className="pdf-preview-card">
